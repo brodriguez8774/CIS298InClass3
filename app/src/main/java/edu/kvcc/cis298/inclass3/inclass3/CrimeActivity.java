@@ -1,37 +1,35 @@
 package edu.kvcc.cis298.inclass3.inclass3;
 
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class CrimeActivity extends AppCompatActivity {
+public class CrimeActivity extends FragmentActivity {
+
+    //region Override Methods
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_crime);
-    }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_crime, menu);
-        return true;
-    }
+        // Gets a variable which represents the support version of the fragment manager.
+        FragmentManager fm = getSupportFragmentManager();
+        // Use the FragmentManager to get the fragment currently in xml UI file. On app start, this will be null.
+        Fragment fragment = fm.findFragmentById(R.id.fragment_container);
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        // If null, create a new CrimeFragment and commit it to the "fragment_container" id, defined in the xml file.
+        if (fragment == null) {
+            fragment = new CrimeFragment();
+            fm.beginTransaction()
+                    .add(R.id.fragment_container, fragment)
+                    .commit();
         }
-
-        return super.onOptionsItemSelected(item);
     }
+
+    //endregion
 }
