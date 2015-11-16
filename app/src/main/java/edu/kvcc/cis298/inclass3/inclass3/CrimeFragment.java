@@ -14,6 +14,7 @@ import android.widget.CompoundButton;
 import android.widget.EditText;
 
 /**
+ * Fragment class to hold and display each Crime.java.
  * Created by brodriguez8774 on 11/10/2015.
  */
 public class CrimeFragment extends Fragment {

@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.UUID;
 
 /**
+ * Class created for each single instance of a crime.
  * Created by brodriguez8774 on 11/10/2015.
  */
 public class Crime {
@@ -24,6 +25,7 @@ public class Crime {
     public Crime() {
         // Generate unique identifier.
         mID = UUID.randomUUID();
+        mDate = new Date();
     }
 
     //endregion
