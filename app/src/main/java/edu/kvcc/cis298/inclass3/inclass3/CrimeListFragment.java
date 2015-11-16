@@ -1,5 +1,6 @@
 package edu.kvcc.cis298.inclass3.inclass3;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -85,8 +86,10 @@ public class CrimeListFragment extends Fragment {
 
         @Override
         public void onClick(View v) {
-            // Temporary onclick toast.
-            Toast.makeText(getActivity(), mCrime.getTitle() + " clicked!", Toast.LENGTH_SHORT).show();
+
+            // Creates new intent using specified method in CrimeActivity.
+            Intent intent = CrimeActivity.newIntent(getActivity(), mCrime.getID());
+            startActivity(intent);
         }
     }
 
