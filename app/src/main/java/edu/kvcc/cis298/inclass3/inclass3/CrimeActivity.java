@@ -9,6 +9,9 @@ import android.os.Bundle;
 
 import java.util.UUID;
 
+/**
+ * Activity class for each individual crime.
+ */
 public class CrimeActivity extends SingleFragmentActivity {
 
     // Intent Identifier String.
@@ -22,8 +25,12 @@ public class CrimeActivity extends SingleFragmentActivity {
         return  intent;
     }
 
+    // It's okay for the host (activity) to know a lot about the fragment.
+    // However, the fragment should know as little as possible about the activity to be flexible.
+    @Override
     protected Fragment createFragment() {
-        return new CrimeListFragment();
+        UUID crimeId = (UUID) getIntent().getSerializableExtra(EXTRA_CRIME_ID);
+        return CrimeFragment.newInstance(crimeId);
     }
 
     //endregion

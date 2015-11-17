@@ -31,6 +31,9 @@ public class CrimeFragment extends Fragment {
     //endregion
 
 
+
+    //region Static information for an activity to create this fragment.
+
     private static final String ARG_CRIME_ID = "crime_id";
 
     public static CrimeFragment newInstance(UUID crimeId) {
@@ -41,6 +44,9 @@ public class CrimeFragment extends Fragment {
         fragment.setArguments(args);
         return fragment;
     }
+
+    //endregion
+
 
 
     //region Override Methods

@@ -50,6 +50,11 @@ public class CrimeListFragment extends Fragment {
         return view;
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        updateUI();
+    }
 
     //endregion
 
@@ -144,10 +149,16 @@ public class CrimeListFragment extends Fragment {
         // Gets the actual list of crimes from CrimeLab class.
         List<Crime> crimes = crimeLab.getCrimes();
 
-        // Creates a new adapter using the list of crimes.
-        mAdapter = new CrimeAdapter(crimes);
-        // Send the newly created adapter to the recycler to use.
-        mCrimeRecyclerView.setAdapter(mAdapter);
+        // If mAdapter does not currently exist, create. Otherwise, just update.
+        if (mAdapter == null) {
+            // Creates a new adapter using the list of crimes.
+            mAdapter = new CrimeAdapter(crimes);
+            // Send the newly created adapter to the recycler to use.
+            mCrimeRecyclerView.setAdapter(mAdapter);
+        } else {
+            // Update by notifying data has changed.
+            mAdapter.notifyDataSetChanged();
+        }
     }
 
 

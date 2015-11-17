@@ -3,6 +3,7 @@ package edu.kvcc.cis298.inclass3.inclass3;
 import android.support.v4.app.Fragment;
 
 /**
+ * Activity class for the CrimeList.
  * Created by brodriguez8774 on 11/16/2015.
  */
 public class CrimeListActivity extends SingleFragmentActivity {
