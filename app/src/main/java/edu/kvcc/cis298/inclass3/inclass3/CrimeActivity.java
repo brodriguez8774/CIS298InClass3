@@ -11,6 +11,7 @@ import java.util.UUID;
 
 /**
  * Activity class for each individual crime.
+ * Outdated due to use of CrimePagerActivity.
  */
 public class CrimeActivity extends SingleFragmentActivity {
 

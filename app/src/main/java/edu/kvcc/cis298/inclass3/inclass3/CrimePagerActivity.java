@@ -28,7 +28,7 @@ public class CrimePagerActivity extends FragmentActivity {
 
 
 
-    //region Intent to Summon Class
+    //region Intent to Summon CrimePagerActivity
 
     private static final String EXTRA_CRIME_ID = "edu.kvcc.cis298.inclass3.inclass3.crime_id";
 

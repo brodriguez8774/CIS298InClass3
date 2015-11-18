@@ -57,7 +57,7 @@ public class CrimeLab {
 
     //region Properties
 
-    public List<Crime> getCrimes(){
+    public List<Crime> getCrimes() {
         return  mCrimes;
     }
 
@@ -68,7 +68,7 @@ public class CrimeLab {
     //region Methods
 
     public Crime getCrime(UUID id) {
-        for (Crime crime:mCrimes) {
+        for (Crime crime : mCrimes) {
             if (crime.getID().equals(id)) {
                 return crime;
             }
