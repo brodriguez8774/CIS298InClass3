@@ -92,8 +92,8 @@ public class CrimeListFragment extends Fragment {
         @Override
         public void onClick(View v) {
 
-            // Creates new intent using specified method in CrimeActivity.
-            Intent intent = CrimeActivity.newIntent(getActivity(), mCrime.getID());
+            // Creates new intent using specified method in CrimePagerActivity.
+            Intent intent = CrimePagerActivity.newIntent(getActivity(), mCrime.getID());
             startActivity(intent);
         }
     }
