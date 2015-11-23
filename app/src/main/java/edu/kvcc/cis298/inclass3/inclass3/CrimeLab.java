@@ -61,6 +61,10 @@ public class CrimeLab {
         return  mCrimes;
     }
 
+    public void addCrime(Crime c) {
+        mCrimes.add(c);
+    }
+
     //endregion
 
 
