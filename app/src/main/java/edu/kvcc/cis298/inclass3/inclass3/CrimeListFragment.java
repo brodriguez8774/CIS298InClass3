@@ -168,6 +168,11 @@ public class CrimeListFragment extends Fragment {
             mCrimes = crimes;
         }
 
+        // Setter for crimes.
+        public void setmCrimes(List<Crime> crimes) {
+            mCrimes = crimes;
+        }
+
         //region Override Methods for CrimeAdapter
 
         // Called by RecyclerView when it needs a new View to display an item.
@@ -216,6 +221,7 @@ public class CrimeListFragment extends Fragment {
             mCrimeRecyclerView.setAdapter(mAdapter);
         } else {
             // Update by notifying data has changed.
+            mAdapter.setmCrimes(crimes);
             mAdapter.notifyDataSetChanged();
         }
 

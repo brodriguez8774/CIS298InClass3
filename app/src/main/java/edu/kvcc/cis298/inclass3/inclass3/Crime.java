@@ -22,10 +22,22 @@ public class Crime {
 
     // region Constructor
 
+    /**
+     * Default constructor.
+     */
     public Crime() {
         // Generate unique identifier.
-        mID = UUID.randomUUID();
+        this(UUID.randomUUID());
+    }
+
+    /**
+     * Single parameter constructor.
+     * @param id Crime's UUID.
+     */
+    public Crime(UUID id) {
+        mID = id;
         mDate = new Date();
+
     }
 
     //endregion
